@@ -295,7 +295,7 @@ resource "oci_core_route_table" "nat" {
   # A fix may still be needed for when new custom route rules are added.
 
   lifecycle {
-    ignore_changes = [defined_tags, freeform_tags]
+    ignore_changes = [defined_tags, freeform_tags, route_rules]
   }
 
   count = var.create_nat_gateway ? 1 : 0
