@@ -165,7 +165,7 @@ resource "oci_core_route_table" "service_gw" {
   vcn_id = oci_core_vcn.vcn.id
 
   lifecycle {
-    ignore_changes = [defined_tags, freeform_tags]
+    ignore_changes = [defined_tags, freeform_tags, route_rules]
   }
 
   count = var.create_service_gateway == true ? 1 : 0
